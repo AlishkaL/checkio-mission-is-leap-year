@@ -1,0 +1,42 @@
+<!-- Describe task in general -->
+
+<p>
+    Sprawdza, czy podany <code>year</code> jest rokiem przestępnym. Rok jest rokiem przestępnym, jeśli jest podzielny przez 4, z wyjątkiem lat końca wieku, które muszą być podzielne przez 400. Oznacza to, że rok 2000 był rokiem przestępnym, chociaż rok 1900 nim nie był.  
+</p>
+
+<!-- <p style="text-align: center;">
+    <img  title="example" src="{{MEDIA}}example.png" alt="example" style="max-height: 83px"/>
+</p> -->
+
+<!-- Explain input and output values -->
+<p>
+   <strong>Wejście:</strong> Integer <span>({% if is_js %}number{% else %}int{% endif %})</span>.
+</p>
+
+<p>
+   <strong>Wyjście:</strong> Wartość logiczna <span>(bool{% if is_js %}ean{% endif %})</span>. 
+</p>
+
+
+<p>
+    <strong>Przykłady:</strong>
+</p>
+
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
+
+<!-- Here you can explain how it can be used in development -->
+<!-- The section is optional -->
+<p class="for_info_only">
+
+    <strong>Sposób użycia:</strong>
+    <i>funkcja ta może być używana w kalendarzach, aplikacjach do tworzenia harmonogramów lub w dowolnym systemie, który zajmuje się danymi rocznymi.</i>
+</p>
+
+<!-- Here you can explain some constraints for input-->
+<!-- The section is optional -->
+<p>
+    <strong>Warunek wstępny:</strong>
+    <ul>
+    <li><i>1 &lt;= rok &lt;=<sup>105</sup></i></li>
+    </ul>
+</p>
