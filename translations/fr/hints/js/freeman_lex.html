@@ -1,0 +1,101 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        Je n'ai aucune idée de la manière de commencer à résoudre cette mission.
+    </div>
+    <div class="answer">
+        <p>
+            Trouvez une idée 💡! Il vous suffit d'écrire quelques conditions pour exprimer la règle suivante. L'année est bissextile, lorsqu'elle est divisible par 4 et non divisible par 100 ou divisible par 400. 
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Ok, par quoi dois-je commencer?
+    </div>
+    <div class="answer">
+        <p>
+            Lisez l'opérateur <a target="_blank" href="https://www.freecodecamp.org/news/javascript-modulo-operator-how-to-use-the-modulus-in-js/">modulo (%)</a> et utilisez-le. Écrivons la première condition: si l'année donnée n'est PAS divisible par 4 (le reste de la division modulo n'est pas égal à 0), votre fonction peut renvoyer immédiatement <b class="code">false</b>, car il ne s'agit pas d'une année bissextile.
+        </p>
+        <pre class="brush: javascript">
+if (year % 4!== 0) return false;
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Que faire ensuite?
+    </div>
+    <div class="answer">
+        <p>
+            Si une année donnée satisfait à la première condition, vérifiez de la même manière si elle est divisible par 100. Si ce n'est pas le cas, c'est ce dont vous avez besoin et votre fonction peut renvoyer <b class="code">true</b>.  
+        </p>
+        <pre class="brush: javascript">
+if (year % 100!== 0) return true;
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        J'ai encore besoin d'un indice.
+    </div>
+    <div class="answer">
+        <p>
+            S'il est divisible par 100, la dernière chance d'obtenir une année bissextile est qu'il soit divisible par 400. Votre fonction doit renvoyer le résultat de cette comparaison.
+        </p>
+        <pre class="brush: javascript">
+return year % 400 == 0;
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Alors, à quoi devrait ressembler ma solution finale?
+    </div>
+    <div class="answer">
+        <p>
+            Il vous suffit de combiner tous les indices précédents et d'envelopper votre code dans une expression de fonction. Il est fortement recommandé d'utiliser des indications de type pour les données d'entrée et de sortie.
+        </p>
+        <p>Voici la solution complète:</p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function isLeapYear(year: number): boolean {
+
+    if (year % 4!== 0) return false;
+    if (year % 100!== 0) return true;
+    return year % 400 == 0;
+}
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Montrez-moi d'autres solutions!<br />
+        parce que je veux être un vrai 🥇 Javascript Hero!
+    </div>
+    <div class="answer">
+        <p>Bien sûr, prenez-le!</p>
+        <p>
+            Utilisez l'opérateur ternaire imbriqué et joignez toutes les conditions sur une seule ligne.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function isLeapYear(year: number): boolean {
+
+    return (year % 4 === 0)? ((year % 100!== 0)? true: (year % 400 === 0)): false;
+}
+        </pre>
+        </div>
+        <p>Cliquez sur <b>Best Solutions</b> dans le menu mission et découvrez de nombreuses autres solutions intéressantes!</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Merci beaucoup! Je comprends mieux maintenant! Tout fonctionne bien!
+    </div>
+    <div class="answer">
+        Heureux de l'apprendre 👍!
+    </div>
+</div>
+</body>
