@@ -1,0 +1,114 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        Je n'ai aucune idée de la manière de commencer à résoudre cette mission.
+    </div>
+    <div class="answer">
+        <p>
+            Trouvez une idée 💡! Il vous suffit d'écrire quelques conditions pour exprimer la règle suivante. L'année est bissextile, lorsqu'elle est divisible par 4 et non divisible par 100 ou divisible par 400. 
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Ok, par quoi dois-je commencer?
+    </div>
+    <div class="answer">
+        <p>
+            Lisez l'opérateur <a target="_blank" href="https://realpython.com/python-modulo-operator/">modulo (%)</a> et utilisez-le. Écrivons la première condition: si l'année donnée n'est PAS divisible par 4 (le reste de la division modulo n'est pas égal à 0), votre fonction peut renvoyer immédiatement <b class="code">False</b>, car il ne s'agit pas d'une année bissextile.
+        </p>
+        <pre class="brush: python">
+if year % 4!= 0: return False
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Que faire ensuite?
+    </div>
+    <div class="answer">
+        <p>
+            Si une année donnée satisfait à la première condition, vérifiez de la même manière si elle est divisible par 100. Si ce n'est pas le cas, c'est ce dont vous avez besoin et votre fonction peut retourner <b class="code">True</b>.  
+        </p>
+        <pre class="brush: python">
+if year % 100!= 0: return True
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        J'ai encore besoin d'un indice.
+    </div>
+    <div class="answer">
+        <p>
+            S'il est divisible par 100, la dernière chance d'obtenir une année bissextile est qu'il soit divisible par 400. Votre fonction doit renvoyer le résultat de cette comparaison.
+        </p>
+        <pre class="brush: python">
+return year % 400 == 0
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Alors, à quoi devrait ressembler ma solution finale?
+    </div>
+    <div class="answer">
+        <p>
+            Il vous suffit de combiner tous les indices précédents et d'envelopper votre code dans une expression de fonction. Il est fortement recommandé d'utiliser des indications de type pour les données d'entrée et de sortie.
+        </p>
+        <p>Voici la solution complète:</p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def is_leap_year(year: int) -> bool:
+
+    if year % 4!= 0: return False
+    if year % 100!= 0: return True
+    return year % 400 == 0
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Montrez-moi d'autres solutions!<br />
+        parce que je veux être une vraie 🥇 Python Ninnjaa!
+    </div>
+    <div class="answer">
+        <p>Bien sûr, prenez-le!</p>
+        <p>
+            Utilisez une fonction dédiée du module intégré.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+from calendar import isleap as is_leap_year
+        </pre>
+        </div>
+        <p>
+            Vérifiez si le 29 février est une date correcte pour cette année. Notez que vous n'avez pas besoin d'affecter le résultat de la fonction <b class="code">datetime</b> à une variable.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+from datetime import datetime
+
+
+def is_leap_year(year: int) -> bool:
+    
+    try:
+        datetime(year, 2, 29)
+        return True
+    except ValueError:
+        return False
+        </pre>
+        </div>
+        <p>Cliquez sur <b>Best Solutions</b> dans le menu mission et découvrez de nombreuses autres solutions intéressantes!</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Merci beaucoup! Je comprends mieux maintenant! Tout fonctionne bien!
+    </div>
+    <div class="answer">
+        Heureux de l'apprendre 👍!
+    </div>
+</div>
+</body>
