@@ -1,0 +1,114 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        Nie mam pojęcia, jak zacząć rozwiązywać tę misję.
+    </div>
+    <div class="answer">
+        <p>
+            Proszę złapać pomysł 💡! Wystarczy napisać kilka warunków, aby wyrazić następującą regułę. Rok jest przestępny, gdy jest podzielny przez 4 i nie jest podzielny przez 100 lub podzielny przez 400. 
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Ok, od czego powinienem zacząć?
+    </div>
+    <div class="answer">
+        <p>
+            Proszę poczytać o operatorze <a target="_blank" href="https://realpython.com/python-modulo-operator/">modulo (%)</a> i go użyć. Napiszmy pierwszy warunek: jeśli podany rok NIE jest podzielny przez 4 (reszta z dzielenia modulo nie jest równa 0), funkcja może natychmiast zwrócić <b class="code">False</b>, ponieważ nie jest to rok przestępny.
+        </p>
+        <pre class="brush: python">
+if year % 4!= 0: return False
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Co robić dalej?
+    </div>
+    <div class="answer">
+        <p>
+            Jeśli dany rok spełnia pierwszy warunek, proszę sprawdzić w ten sam sposób, czy jest podzielny przez 100. Jeśli nie, to właśnie tego potrzebujemy, a funkcja może zwrócić <b class="code">True</b>.  
+        </p>
+        <pre class="brush: python">
+if year % 100!= 0: return True
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Nadal potrzebuję podpowiedzi.
+    </div>
+    <div class="answer">
+        <p>
+            Jeśli jest podzielny przez 100, ostatnią szansą na uzyskanie roku przestępnego jest podzielność przez 400. Pana funkcja musi zwrócić wynik tego porównania.
+        </p>
+        <pre class="brush: python">
+return year % 400 == 0
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Jak więc powinno wyglądać moje ostateczne rozwiązanie?
+    </div>
+    <div class="answer">
+        <p>
+            Wystarczy połączyć wszystkie poprzednie podpowiedzi i zawinąć kod w wyrażenie funkcyjne. Używanie podpowiedzi typu dla danych wejściowych i wyjściowych jest wysoce zalecane.
+        </p>
+        <p>Poniżej znajduje się całe rozwiązanie:</p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def is_leap_year(year: int) -> bool:
+
+    if year % 4!= 0: return False
+    if year % 100!= 0: return True
+    return year % 400 == 0
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Proszę pokazać mi więcej rozwiązań!<br />
+        bo chcę być prawdziwą 🥇 Python Ninnjaa!
+    </div>
+    <div class="answer">
+        <p>Jasne, proszę łapać!</p>
+        <p>
+            Proszę użyć dedykowanej funkcji z wbudowanego modułu.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+from calendar import isleap as is_leap_year
+        </pre>
+        </div>
+        <p>
+            Proszę sprawdzić, czy 29 lutego jest poprawną datą w tym roku. Proszę zauważyć, że nie trzeba przypisywać wyniku funkcji <b class="code">datetime</b> do żadnej zmiennej.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+from datetime import datetime
+
+
+def is_leap_year(year: int) -> bool:
+    
+    try:
+        datetime(year, 2, 29)
+        return True
+    except ValueError:
+        return False
+        </pre>
+        </div>
+        <p>Proszę kliknąć <b>Best Solutions</b> w menu misji i zobaczyć wiele innych ciekawych rozwiązań!</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Dzięki! Teraz wiem i rozumiem więcej! Wszystko działa jak należy!
+    </div>
+    <div class="answer">
+        Miło mi to słyszeć 👍!
+    </div>
+</div>
+</body>
