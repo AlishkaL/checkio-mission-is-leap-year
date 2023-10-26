@@ -1,0 +1,101 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        I have no idea how to start solving this mission.
+    </div>
+    <div class="answer">
+        <p>
+            Catch an idea 💡! You just need to to write a few conditions to express the following rule. The year is leap, when it's divisible by 4 and not divisible by 100 or divisible by 400. 
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Ok, what should I start from?
+    </div>
+    <div class="answer">
+        <p>
+            Read about <a target="_blank" href="https://www.freecodecamp.org/news/javascript-modulo-operator-how-to-use-the-modulus-in-js/">modulo (%)</a> operator and use it. Let's write the first condition: if the given year is NOT divisible by 4 (the remainder from modulo division is not equal 0) your function may immediately return <b class="code">false</b>, because it is not a leap year.
+        </p>
+        <pre class="brush: javascript">
+if (year % 4 !== 0) return false;
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        What to do next?
+    </div>
+    <div class="answer">
+        <p>
+            If a given year passes the first condition, check in the same way if it's divisible by 100. If not, that's what you need and your function may return <b class="code">True</b>.  
+        </p>
+        <pre class="brush: javascript">
+if (year % 100 !== 0) return true;
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        I still need a hint.
+    </div>
+    <div class="answer">
+        <p>
+            If it's divisible by 100, the last chance to get a leap year is if it's divisible by 400. Your function must return the result if this comparison.
+        </p>
+        <pre class="brush: javascript">
+return year % 400 == 0;
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        So, how my final solution should look like?
+    </div>
+    <div class="answer">
+        <p>
+            You just need to join all previous hints and wrap your code into function expression. Using type hints for input and output data are highly recommended.
+        </p>
+        <p>Here is the whole solution:</p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function isLeapYear(year: number): boolean {
+
+    if (year % 4 !== 0) return false;
+    if (year % 100 !== 0) return true;
+    return year % 400 == 0;
+}
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Show me more solutions!<br />
+        'Cause I wanna be a real 🥇 Javascript Hero!
+    </div>
+    <div class="answer">
+        <p>Sure, grab it!</p>
+        <p>
+            Use nested ternary operator and join all conditions in one line.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function isLeapYear(year: number): boolean {
+
+    return (year % 4 === 0) ? ((year % 100 !== 0) ? true : (year % 400 === 0)) : false;
+}
+        </pre>
+        </div>
+        <p>Click <b>Best Solutions</b> at mission menu and see a lot of other interesting solutions!</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Thanks! I know and understand more now! Everything works fine!
+    </div>
+    <div class="answer">
+        Glad to hear it 👍!
+    </div>
+</div>
+</body>
