@@ -1,0 +1,101 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        我不知道如何开始解决这个任务。
+    </div>
+    <div class="answer">
+        <p>
+            抓住一个点子💡！你只需要写几个条件来表达下面的规则。当年份能被 4 整除而不能被 100 整除或被 400 整除时，该年份为闰年。 
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        好吧，我应该从什么开始呢？
+    </div>
+    <div class="answer">
+        <p>
+            阅读<a target="_blank" href="https://www.freecodecamp.org/news/javascript-modulo-operator-how-to-use-the-modulus-in-js/">modulo (%)</a> 运算符并使用它。让我们写下第一个条件：如果给定的年份不能被 4 整除（模除的余数不等于 0），函数可能会立即返回<b class="code">false</b> ，因为这不是闰年。
+        </p>
+        <pre class="brush: javascript">
+if (year % 4!== 0) return false;
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        接下来该怎么办？
+    </div>
+    <div class="answer">
+        <p>
+            如果给定的年份通过了第一个条件，用同样的方法检查它是否能被 100 整除。如果不能，这就是您需要的，您的函数可能返回<b class="code">true</b> 。  
+        </p>
+        <pre class="brush: javascript">
+if (year % 100!== 0) return true;
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        我还需要提示。
+    </div>
+    <div class="answer">
+        <p>
+            如果它能被 100 整除，那么得到闰年的最后机会就是它能被 400 整除。您的函数必须返回这种比较的结果。
+        </p>
+        <pre class="brush: javascript">
+return year % 400 == 0;
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        那么，我的最终解决方案应该是怎样的呢？
+    </div>
+    <div class="answer">
+        <p>
+            您只需将之前所有的提示连接起来，然后将代码封装成函数表达式即可。强烈建议对输入和输出数据使用类型提示。
+        </p>
+        <p>以下是整个解决方案：</p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function isLeapYear(year: number): boolean {
+
+    if (year % 4!== 0) return false;
+    if (year % 100!== 0) return true;
+    return year % 400 == 0;
+}
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        向我展示更多解决方案！<br />
+        因为我想成为真正的 🥇 Javascript 英雄！
+    </div>
+    <div class="answer">
+        <p>当然，抓紧时间！</p>
+        <p>
+            使用嵌套三元运算符，将所有条件连接在一行中。
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function isLeapYear(year: number): boolean {
+
+    return (year % 4 === 0)? ((year % 100!== 0)? true: (year % 400 === 0)): false;
+}
+        </pre>
+        </div>
+        <p>点击任务菜单<b>Best Solutions</b> ，查看更多有趣的解决方案！</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        谢谢！我现在知道并理解得更多了！一切正常！
+    </div>
+    <div class="answer">
+        很高兴听到这个消息 👍！
+    </div>
+</div>
+</body>
