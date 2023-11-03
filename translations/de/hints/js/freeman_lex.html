@@ -1,0 +1,101 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        Ich habe keine Ahnung, wie ich mit der Lösung dieser Aufgabe beginnen soll.
+    </div>
+    <div class="answer">
+        <p>
+            Fangen Sie eine Idee 💡! Sie müssen nur ein paar Bedingungen aufstellen, um die folgende Regel auszudrücken. Das Jahr ist ein Schaltjahr, wenn es durch 4 teilbar ist und nicht durch 100 oder 400 teilbar ist. 
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Ok, womit soll ich anfangen?
+    </div>
+    <div class="answer">
+        <p>
+            Lesen Sie über den <a target="_blank" href="https://www.freecodecamp.org/news/javascript-modulo-operator-how-to-use-the-modulus-in-js/">modulo (%)</a> Operator und verwenden Sie ihn. Lassen Sie uns die erste Bedingung schreiben: Wenn das angegebene Jahr NICHT durch 4 teilbar ist (der Rest aus der Modulo-Division ist ungleich 0), kann Ihre Funktion sofort <b class="code">false</b> zurückgeben, da es sich nicht um ein Schaltjahr handelt.
+        </p>
+        <pre class="brush: javascript">
+if (year % 4!== 0) return false;
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Was ist als nächstes zu tun?
+    </div>
+    <div class="answer">
+        <p>
+            Wenn ein bestimmtes Jahr die erste Bedingung erfüllt, prüfen Sie auf die gleiche Weise, ob es durch 100 teilbar ist. Wenn nicht, brauchen Sie das und Ihre Funktion kann <b class="code">true</b> zurückgeben.  
+        </p>
+        <pre class="brush: javascript">
+if (year % 100!== 0) return true;
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Ich brauche noch einen Hinweis.
+    </div>
+    <div class="answer">
+        <p>
+            Wenn es durch 100 teilbar ist, besteht die letzte Chance, ein Schaltjahr zu erhalten, wenn es durch 400 teilbar ist. Ihre Funktion muss das Ergebnis dieses Vergleichs zurückgeben.
+        </p>
+        <pre class="brush: javascript">
+return year % 400 == 0;
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Wie sollte also meine endgültige Lösung aussehen?
+    </div>
+    <div class="answer">
+        <p>
+            Sie müssen nur alle vorherigen Hinweise zusammenführen und Ihren Code in einen Funktionsausdruck verpacken. Die Verwendung von Typ-Hinweisen für Eingabe- und Ausgabedaten wird dringend empfohlen.
+        </p>
+        <p>Hier ist die gesamte Lösung:</p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function isLeapYear(year: number): boolean {
+
+    if (year % 4!== 0) return false;
+    if (year % 100!== 0) return true;
+    return year % 400 == 0;
+}
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Zeigen Sie mir mehr Lösungen!<br />
+        denn ich möchte ein echter 🥇 Javascript-Held sein!
+    </div>
+    <div class="answer">
+        <p>Klar, schnappen Sie es sich!</p>
+        <p>
+            Verwenden Sie den verschachtelten ternären Operator und verbinden Sie alle Bedingungen in einer Zeile.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function isLeapYear(year: number): boolean {
+
+    return (year % 4 === 0)? ((year % 100!== 0)? true: (year % 400 === 0)): false;
+}
+        </pre>
+        </div>
+        <p>Klicken Sie auf <b>Best Solutions</b> im Menü Mission und sehen Sie sich viele andere interessante Lösungen an!</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Vielen Dank! Ich weiß und verstehe jetzt mehr! Alles funktioniert bestens!
+    </div>
+    <div class="answer">
+        Freut mich zu hören 👍!
+    </div>
+</div>
+</body>
