@@ -1,0 +1,42 @@
+<!-- Describe task in general -->
+
+<p>
+    Prüfen Sie, ob das angegebene <code>year</code> ein Schaltjahr ist. Ein Jahr ist ein Schaltjahr, wenn es durch 4 teilbar ist, mit Ausnahme der Jahre am Ende eines Jahrhunderts, die durch 400 teilbar sein müssen. Das bedeutet, dass das Jahr 2000 ein Schaltjahr war, das Jahr 1900 jedoch nicht.  
+</p>
+
+<!-- <p style="text-align: center;">
+    <img  title="example" src="{{MEDIA}}example.png" alt="example" style="max-height: 83px"/>
+</p> -->
+
+<!-- Explain input and output values -->
+<p>
+   <strong>Eingabe:</strong> Integer <span>({% if is_js %}number{% else %}int{% endif %})</span>.
+</p>
+
+<p>
+   <strong>Ausgabe:</strong> Logischer Wert <span>(bool{% if is_js %}ean{% endif %})</span>. 
+</p>
+
+
+<p>
+    <strong>Beispiele:</strong>
+</p>
+
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
+
+<!-- Here you can explain how it can be used in development -->
+<!-- The section is optional -->
+<p class="for_info_only">
+
+    <strong>Wie sie verwendet wird:</strong>
+    <i>diese Funktion kann in Kalendern, Terminplanungsanwendungen oder jedem System, das mit Jahresdaten arbeitet, verwendet werden.</i>
+</p>
+
+<!-- Here you can explain some constraints for input-->
+<!-- The section is optional -->
+<p>
+    <strong>Vorbedingung:</strong>
+    <ul>
+    <li><i>1 &lt;= Jahr &lt;=<sup>105</sup></i></li>
+    </ul>
+</p>
