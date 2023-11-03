@@ -1,0 +1,114 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        Ich habe keine Ahnung, wie ich mit der Lösung dieser Aufgabe beginnen soll.
+    </div>
+    <div class="answer">
+        <p>
+            Fangen Sie eine Idee 💡! Sie müssen nur ein paar Bedingungen aufstellen, um die folgende Regel auszudrücken. Das Jahr ist ein Schaltjahr, wenn es durch 4 teilbar ist und nicht durch 100 oder 400 teilbar ist. 
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Ok, womit soll ich anfangen?
+    </div>
+    <div class="answer">
+        <p>
+            Lesen Sie über den <a target="_blank" href="https://realpython.com/python-modulo-operator/">modulo (%)</a> Operator und verwenden Sie ihn. Lassen Sie uns die erste Bedingung schreiben: Wenn das angegebene Jahr NICHT durch 4 teilbar ist (der Rest aus der Modulo-Division ist ungleich 0), kann Ihre Funktion sofort <b class="code">False</b> zurückgeben, da es sich nicht um ein Schaltjahr handelt.
+        </p>
+        <pre class="brush: python">
+if year % 4!= 0: return False
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Was ist als nächstes zu tun?
+    </div>
+    <div class="answer">
+        <p>
+            Wenn ein bestimmtes Jahr die erste Bedingung erfüllt, prüfen Sie auf die gleiche Weise, ob es durch 100 teilbar ist. Wenn nicht, brauchen Sie das und Ihre Funktion kann <b class="code">True</b> zurückgeben.  
+        </p>
+        <pre class="brush: python">
+if year % 100!= 0: return True
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Ich brauche noch einen Hinweis.
+    </div>
+    <div class="answer">
+        <p>
+            Wenn es durch 100 teilbar ist, besteht die letzte Chance, ein Schaltjahr zu erhalten, wenn es durch 400 teilbar ist. Ihre Funktion muss das Ergebnis dieses Vergleichs zurückgeben.
+        </p>
+        <pre class="brush: python">
+return year % 400 == 0
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Wie sollte also meine endgültige Lösung aussehen?
+    </div>
+    <div class="answer">
+        <p>
+            Sie müssen nur alle vorherigen Hinweise zusammenführen und Ihren Code in einen Funktionsausdruck verpacken. Die Verwendung von Typ-Hinweisen für Eingabe- und Ausgabedaten wird dringend empfohlen.
+        </p>
+        <p>Hier ist die gesamte Lösung:</p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def is_leap_year(year: int) -> bool:
+
+    if year % 4!= 0: return False
+    if year % 100!= 0: return True
+    return year % 400 == 0
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Zeigen Sie mir mehr Lösungen!<br />
+        denn ich will ein echter 🥇 Python Ninnjaa sein!
+    </div>
+    <div class="answer">
+        <p>Klar, schnapp sie dir!</p>
+        <p>
+            Verwenden Sie eine spezielle Funktion aus einem eingebauten Modul.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+from calendar import isleap as is_leap_year
+        </pre>
+        </div>
+        <p>
+            Prüfen Sie, ob der 29. Februar ein korrektes Datum in diesem Jahr ist. Beachten Sie, dass Sie das Ergebnis der Funktion <b class="code">datetime</b> keiner Variablen zuweisen müssen.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+from datetime import datetime
+
+
+def is_leap_year(year: int) -> bool:
+    
+    try:
+        datetime(year, 2, 29)
+        return True
+    except ValueError:
+        return False
+        </pre>
+        </div>
+        <p>Klicken Sie im Missionsmenü auf <b>Best Solutions</b> und sehen Sie sich viele weitere interessante Lösungen an!</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Vielen Dank! Ich weiß und verstehe jetzt mehr! Alles funktioniert bestens!
+    </div>
+    <div class="answer">
+        Freut mich zu hören 👍!
+    </div>
+</div>
+</body>
